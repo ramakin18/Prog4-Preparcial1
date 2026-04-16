@@ -1,5 +1,6 @@
 package com.programacion4.unidad4ej6.feature.insumo.services.impl.domain;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,12 +16,11 @@ import com.programacion4.unidad4ej6.feature.insumo.mappers.MovimientoStockMapper
 import com.programacion4.unidad4ej6.feature.insumo.models.TipoMovimiento;
 
 @Service
+@AllArgsConstructor
 public class InsumoMoverStockService implements IInsumoMoverStockService {
-    
-    @Autowired
+
     private IInsumoFindByIdService insumoFindByIdService;
 
-    @Autowired
     private IInsumoRepository insumoRepository;
 
     @Override

@@ -18,6 +18,8 @@ import com.programacion4.unidad4ej6.feature.insumo.models.HistorialPrecio;
 import com.programacion4.unidad4ej6.feature.insumo.services.interfaces.commons.IInsumoExistsByCodigoInternoService;
 import com.programacion4.unidad4ej6.config.exceptions.ConflictException;
 
+import static com.programacion4.unidad4ej6.feature.insumo.mappers.MovimientoStockMapper.toEntity;
+
 @Service
 @AllArgsConstructor
 public class InsumoCreateService implements IInsumoCreateService {
@@ -45,14 +47,5 @@ public class InsumoCreateService implements IInsumoCreateService {
         return InsumoMapper.toResponseDTO(insumoGuardado);
     }
 
-    public Insumo toEntity(InsumoCreateDTO insumoCreateDTO) {
-        return Insumo.builder()
-                .nombre(insumoCreateDTO.getNombre())
-                .codigoInterno(insumoCreateDTO.getCodigoInterno())
-                .stockActual(0L)
-                .activo(true)
-                .historialPrecios(new ArrayList<HistorialPrecio>())
-                .movimientosStock(new ArrayList<MovimientoStock>())
-                .build();
-    }
+
 }

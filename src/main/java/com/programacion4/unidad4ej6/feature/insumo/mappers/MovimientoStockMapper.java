@@ -26,5 +26,6 @@ public class MovimientoStockMapper {
                 .build();
 
         return new MovimientoStock();
+        //SOLUCION  movimientoStock arriba
     }
 }
